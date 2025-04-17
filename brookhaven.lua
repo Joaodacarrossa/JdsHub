@@ -44,7 +44,7 @@ local SliderSpeed = PlayerTab:CreateSlider({
    CurrentValue = 16,
    Flag = "Speed",
    Callback = function(Value)
-      player.Character:WaitForChild("Humanoid").WalkSpeed = Value
+      player.Character:WaitForChild("Humanoid").WalkSpeed = (Value)
    end,
 })
 
@@ -63,7 +63,7 @@ local SliderJump = PlayerTab:CreateSlider({
    CurrentValue = 50,
    Flag = "Jump",
    Callback = function(Value)
-      player.Character:WaitForChild("Humanoid").JumpPower = Value
+      player.Character:WaitForChild("Humanoid").JumpPower = (Value)
    end,
 })
 
