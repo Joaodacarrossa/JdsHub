@@ -6,7 +6,7 @@ local Window = Rayfield:CreateWindow({
    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Loading Jds Hub...",
    LoadingSubtitle = "by Joaodacarrossa",
-   Theme = "AmberGlow", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+   Theme = "Amethyst", -- Check https://docs.sirius.menu/rayfield/configuration/themes
 
    DisableRayfieldPrompts = false,
    DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
@@ -57,13 +57,18 @@ local ButtonSpeed = PlayerTab:CreateButton({
 local SliderJump = PlayerTab:CreateSlider({
   Name = "Jump heigh",
   Range = {50, 200},
-  Increment = 1,
+  Increment = 2,
   Suffix = "Heigh"
   CurrentValue = 50,
   Flag = "Jump"
   Callback = function(Value)
     player.Character:WaitForChild("Humanoid").JumpPower = Value
   end,
+})
+
+local ButtonJump = PlayerTab:CreateButton({
+      Name = "Reset jump",
+      Callback = SliderJump:Set(50),
 })
 
 local CreditsTab = Window:CreateTab("Credits", nil)
